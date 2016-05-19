@@ -36,10 +36,6 @@ html,
 body {
   height: 100%;
   background-color: #000;
-  background-image: url("../images/bubble_chamb.jpg");
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-attachment: fixed;
   filter: hue-rotate(30%);
 }
 body {
@@ -47,19 +43,14 @@ body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0);
 }
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
+.background {
+  background-image: url("../images/sci_hall.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
   width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
+  opacity: .7;
 }
 .cover-container {
   margin-right: auto;
@@ -70,7 +61,6 @@ body {
 .inner {
   padding: 30px;
 }
-
 
 /*
  * Header
@@ -127,7 +117,18 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
-
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
 @media (min-width: 768px) {
   .masthead-brand {
     float: left;
@@ -145,6 +146,10 @@ body {
 .cover {
   padding: 0 20px;
 }
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
 .marquee  {
   vertical-align: middle;
   width: 100%;
@@ -155,11 +160,6 @@ body {
   font-family: cursive;
   font-style: bold;
 }
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
 
 /*
  * Footer
@@ -183,7 +183,31 @@ body {
   padding-right: 0px;
   font-size: 12pt;
 }
-
+.placeholder {
+  padding: 20px;
+}
+.placeholder > a > img {
+  display: inline;
+  height: 45px;
+  width: auto;
+  background-color: #111111;
+  border-radius: 5%;
+  border-style: solid;
+  border-color: deepskyblue;
+  border-width: 3px;
+}
+.placeholders {
+  position: fixed;
+  height: auto;
+  width: auto;
+  bottom: 0;
+  left: 10%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  border-style: solid;
+  border-color: deepskyblue;
+  border-width: 1px;
+}
 
 /*
  * Affix and center
@@ -198,6 +222,9 @@ body {
   .mastfoot {
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
+    vertical-align: middle; 
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
@@ -208,13 +235,5 @@ body {
   .mastfoot,
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 75%;
   }
 }
