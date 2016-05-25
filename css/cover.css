@@ -13,18 +13,17 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  background-color: beige;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
 }
-.btn-alt1,
 .btn-alt1:hover,
 .btn-alt1:focus {
   color: #333;
   text-shadow: none;
-  background-color: #b0b0b0;
-  border: 1px solid #fff;
+  background-color: #FFF;
+  border: 5px inset #333;
 }
 
 
@@ -65,9 +64,14 @@ body {
 /*
  * Header
  */
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.masthead-nav {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  top: -35px;
+  background-color: whitesmoke;
+  border: solid 2px gray;
+  border-top-color: transparent;
 }
 .masthead-nav > div {
   display: inline-block;
@@ -129,14 +133,6 @@ body {
   display: table-cell;
   vertical-align: top;
 }
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: center;
-  }
-}
 
 
 /*
@@ -151,11 +147,18 @@ body {
   font-weight: bold;
 }
 .marquee  {
+  height: 125px;
+  position: fixed;
+  top: 0;
   vertical-align: middle;
   width: 100%;
+  background: deepskyblue;
+  border: solid 2px gray;
+  border-bottom-color: transparent;
+  opacity: .9;
 }
 .marquee > h1  {
-  color: antiquewhite;
+  color: black;
   font-size: 40pt;
   font-family: cursive;
   font-style: bold;
@@ -186,27 +189,19 @@ body {
 .placeholder {
   padding: 20px;
 }
-.placeholder > a > img {
+.placeholder > a > img  {
   display: inline;
   height: 45px;
   width: auto;
   background-color: #111111;
+  border: solid deepskyblue 4px;
   border-radius: 5%;
-  border-style: solid;
-  border-color: deepskyblue;
-  border-width: 3px;
 }
 .placeholders {
-  position: fixed;
+  position: relative;
   height: auto;
-  width: auto;
-  bottom: 0;
-  left: 10%;
-  border-bottom-left-radius: 10%;
-  border-bottom-right-radius: 10%;
-  border-style: solid;
-  border-color: deepskyblue;
-  border-width: 1px;
+  width: 350px;
+  top: 5%;
 }
 
 /*
@@ -236,4 +231,11 @@ body {
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
+}
+
+/*
+* On screen events
+*/
+.hover  {
+  background-color: black;
 }
